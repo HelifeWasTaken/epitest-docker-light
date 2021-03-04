@@ -117,6 +117,7 @@ RUN     dnf -y --refresh install            \
         rust.x86_64                         \
         java-11-openjdk-11.0.10.0.9-0.fc32.x86_64       \
         java-11-openjdk-devel-11.0.10.0.9-0.fc32.x86_64 \
+        emacs-nox                                       \
     && dnf clean all -y
 
 RUN python3 -m pip install --upgrade pip \
@@ -140,5 +141,6 @@ COPY fs /
 
 RUN cd /tmp \
     && bash build_csfml.sh \
+    && bash build_epitech_emacs.sh \
     && rm -rf /tmp/* \
     && chmod 1777 /tmp
