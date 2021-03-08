@@ -39,5 +39,6 @@ COPY fs /
 
 RUN cd /tmp \
     && bash build_csfml.sh \
+    && bash build_epitech_emacs.sh
     && rm -rf /tmp/* \
     && chmod 1777 /tmp
