@@ -25,11 +25,6 @@ RUN dnf -y upgrade                          \
         vim                                 \
     && dnf clean all -y
 
-# Large layer was splitted because build timeout on push to github package
-RUN     dnf -y --refresh install            \
-        emacs-nox                                       \
-    && dnf clean all -y
-
 RUN cd /tmp \
     && rpm -ivh https://github.com/samber/criterion-rpm-package/releases/download/2.3.3/libcriterion-devel-2.3.3-2.el7.x86_64.rpm
 
