@@ -10,19 +10,14 @@ RUN dnf -y upgrade                          \
         curl.x86_64                         \
         gcc-c++.x86_64                      \
         gcc.x86_64                          \
-        gdb.x86_64                          \
         git                                 \
         glibc-devel.x86_64                  \
         glibc-locale-source.x86_64          \
         glibc.x86_64                        \
         make.x86_64                         \
-        nasm.x86_64                         \
-        ncurses-devel.x86_64                \
-        ncurses-libs                        \
-        ncurses.x86_64                      \
         valgrind.x86_64                     \
-        which.x86_64                        \
-        vim                                 \
+        psmisc.x86_64                       \
+        python3.86_64                       \
     && dnf clean all -y
 
 RUN cd /tmp \
@@ -34,6 +29,5 @@ COPY fs /
 
 RUN cd /tmp \
     && bash build_csfml.sh \
-    && bash build_epitech_emacs.sh \
     && rm -rf /tmp/* \
     && chmod 1777 /tmp
